@@ -3,6 +3,7 @@ import { useState } from "react";
 useState;
 const Form = ({ formData }) => {
   const [formInfo, setFormInfo] = useState({
+    id: self.crypto.randomUUID(),
     finance_type: "invoice",
     to_from: "",
     details: "",
@@ -12,6 +13,13 @@ const Form = ({ formData }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     formData(formInfo);
+    setFormInfo({
+      id: self.crypto.randomUUID(),
+      finance_type: "invoice",
+      to_from: "",
+      details: "",
+      amount: "",
+    });
   };
 
   const handleChange = (e) => {
