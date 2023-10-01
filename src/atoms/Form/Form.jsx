@@ -50,6 +50,7 @@ const Form = ({ formData }) => {
             value={formInfo.to_from}
             name="to_from"
             onChange={handleChange}
+            required
           />
         </div>
         <div className="field">
@@ -60,6 +61,7 @@ const Form = ({ formData }) => {
             name="details"
             value={formInfo.details}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="field">
@@ -70,6 +72,7 @@ const Form = ({ formData }) => {
             name="amount"
             value={formInfo.amount}
             onChange={handleChange}
+            required
           />
         </div>
         <button>Add</button>
