@@ -1,11 +1,18 @@
 import ListItem from "../ListItem/ListItem";
 
-const List = () => {
+const List = ({ logInfo }) => {
   return (
-    <div>
-      This is the List
-      <ListItem />
-    </div>
+    <>
+      <ul className="item-list">
+        {logInfo?.map((singleLog) =>
+          singleLog.details.length > 0 ? (
+            <span key={singleLog.id}>
+              <ListItem singleLog={singleLog} />
+            </span>
+          ) : null
+        )}
+      </ul>
+    </>
   );
 };
 
