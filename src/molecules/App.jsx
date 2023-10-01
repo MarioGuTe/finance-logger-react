@@ -6,15 +6,17 @@ function App() {
   const [newLog, setNewLog] = useState([]);
 
   function updateLogInfo(formData) {
-    setNewLog(formData);
-    console.log("fired", newLog, "hello");
+    return setNewLog((currentData) => {
+      return [...currentData, formData];
+    });
   }
 
+  console.log(newLog);
   return (
     <>
       <div className="wrapper">
         <h1>Finance Logger</h1>
-        <List itemLog={newLog} />
+        <List logInfo={newLog} />
       </div>
       <footer>
         <Form formData={updateLogInfo} />
