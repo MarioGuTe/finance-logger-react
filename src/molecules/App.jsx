@@ -11,12 +11,18 @@ function App() {
     });
   }
 
+  function deleteLog(id) {
+    setNewLog((currentData) => {
+      return currentData.filter((newLog) => newLog.id !== id);
+    });
+  }
+
   console.log(newLog);
   return (
     <>
       <div className="wrapper">
         <h1>Finance Logger</h1>
-        <List logInfo={newLog} />
+        <List logInfo={newLog} onClickItem={deleteLog} />
       </div>
       <footer>
         <Form formData={updateLogInfo} />
