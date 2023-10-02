@@ -1,4 +1,6 @@
-const ListItem = ({ singleLog }) => {
+import DeleteButton from "../DeleteButton/DeleteButton";
+
+const ListItem = ({ singleLog, onClickItem }) => {
   return (
     <>
       <li>
@@ -8,6 +10,7 @@ const ListItem = ({ singleLog }) => {
             ? `${singleLog.to_from} is owed ${singleLog.amount} for ${singleLog.details}`
             : `${singleLog.to_from} owes ${singleLog.amount} for ${singleLog.details}`}
         </p>
+        <DeleteButton id={singleLog.id} onClickItem={onClickItem} />
       </li>
     </>
   );
